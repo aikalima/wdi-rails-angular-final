@@ -1,0 +1,22 @@
+<h1>Raffler</h1>
+
+<div ng-controller="TestCtrl">
+Today's instrcutor is {{name}}
+</div>
+
+<div ng-controller="RaffleCtrl">
+  <form ng-submit="addEntry()">
+    <input type="text" ng-model="newEntry.name">
+    <input type="submit" value="Add">
+  </form>
+
+  <ul>
+    <li ng-repeat="entry in entries">
+      {{entry.name}} <span star-rating rating-value="entry.rating" max="10" on-rating-selected="saveRating(newRating,entry)"></span>
+      <span ng-show="entry.winner" ng-class="{highlight: entry == lastWinner}" class="winner">WINNER</span>
+    </li>
+  </ul>
+
+  <button ng-click="drawWinner()">Draw Winner</button>
+
+</div>
