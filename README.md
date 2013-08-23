@@ -1,10 +1,11 @@
-# RailsCasts Example Application
+# WDI Rails/AngularJS example
 
 Run these commands to try it out.
 
 ```
 bundle
-rake db:setup
+rake db:migrate
+rake db:seed
 rails s
 ```
 
